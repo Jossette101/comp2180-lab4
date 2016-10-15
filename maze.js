@@ -34,6 +34,7 @@ window.onload = function(){
 		boundaries[c].onmouseover = function(){
 			for(var x = 0; x<boundaries.length; x++){
 				boundaries[x].style.backgroundColor = "red";
+				document.getElementById("status").innerHTML = "You Lose!";
 				wallsTouched = true;
 			}
 			//break;
@@ -44,21 +45,31 @@ window.onload = function(){
 		start.addEventListener("click",function(){
 			for(var x = 0; x<boundaries.length; x++){
 				boundaries[x].style.backgroundColor = "white";
+				document.getElementById("status").innerHTML = "Start Here!";
 				startB = true;
 			}			
-
 	});
+	
+	
+	/*var walls = for(var x = 0; x<boundaries.length; x++){
+				boundaries[x].style.backgroundColor = "black";
+				}
+		walls.addEventListener("mouseover",function(){
+			wallsTouched = true;
+			alert("You Lose!");
+		});*/
 	
 	var end = document.getElementById("end");
 		end.addEventListener("click",function(){
-		/*if((wallsTouched == false)&&(startB == true)){
-			alert("You Win!");
-		}*/ alert("You Lose!");});
-	/*if(wallsTouched == true){
-		alert("You Lose!");
-		}
+			if((document.getElementById("status") === "You Lose!")&& (document.getElementById("status") === "Start Here!")){
+				document.getElementById("status").innerHTML = "You Lose!";
+			}
+			else {
+				document.getElementById("status").innerHTML = "You Win!";
+			}
+		});
+	
 	 
-	*/
 	
 	/*var walls = for(var c = 0; c < boundaries.length; c++){
 		boundaries[c].onmouseover = function(){
