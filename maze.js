@@ -27,15 +27,44 @@ window.onload = function(){
 		*/
 	var boundaries = document.querySelectorAll(".boundary");
 	
+	var startB = false;
+	var wallsTouched = false;
+	
 	for(var c = 0; c < boundaries.length; c++){
 		boundaries[c].onmouseover = function(){
 			for(var x = 0; x<boundaries.length; x++){
 				boundaries[x].style.backgroundColor = "red";
+				wallsTouched = true;
 			}
 			//break;
+		} 
+	}
+	
+	var start = document.getElementById("start");
+		start.addEventListener("click",function(){
+		startB = true; 
+	alert("You started!");
+	});
+	
+	var end = document.getElementById("end");
+		end.addEventListener("click",function(){
+		/*if((wallsTouched == false)&&(startB == true)){
+			alert("You Win!");
+		}*/ alert("hello");});
+	/*if(wallsTouched == true){
+		alert("You Lose!");
+		}
+	 
+	*/
+	
+	/*var walls = for(var c = 0; c < boundaries.length; c++){
+		boundaries[c].onmouseover = function(){
+			for(var x = 0; x<boundaries.length; x++){
+				boundaries[x].style.backgroundColor = "red";
+			}
 		}
 	}
-}
-
-
-//$(".boundary").css("color":"red");
+	
+	//if()
+	*/
+}//$(".boundary").css("color":"red");
