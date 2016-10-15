@@ -42,15 +42,18 @@ window.onload = function(){
 	
 	var start = document.getElementById("start");
 		start.addEventListener("click",function(){
-		startB = true; 
-	alert("You started!");
+			for(var x = 0; x<boundaries.length; x++){
+				boundaries[x].style.backgroundColor = "white";
+				startB = true;
+			}			
+
 	});
 	
 	var end = document.getElementById("end");
 		end.addEventListener("click",function(){
 		/*if((wallsTouched == false)&&(startB == true)){
 			alert("You Win!");
-		}*/ alert("hello");});
+		}*/ alert("You Lose!");});
 	/*if(wallsTouched == true){
 		alert("You Lose!");
 		}
